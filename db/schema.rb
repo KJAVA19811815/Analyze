@@ -11,10 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170614172205) do
+ActiveRecord::Schema.define(version: 20170615002900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+  end
+
+  create_table "options", force: :cascade do |t|
+    t.string  "options_name"
+    t.integer "{:index=>true, :foreign_key=>true}_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.text    "question_name"
+    t.integer "{:index=>true, :foreign_key=>true}_id"
+  end
+
+  create_table "surveys", force: :cascade do |t|
+    t.string  "name"
+    t.text    "description"
+    t.integer "{:index=>true, :foreign_key=>true}_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -27,6 +46,7 @@ ActiveRecord::Schema.define(version: 20170614172205) do
     t.integer  "income"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "{:index=>true, :foreign_key=>true}_id"
   end
 
 end
