@@ -1,0 +1,27 @@
+<%provide(:title, 'Create a form-survey')%>
+
+<div class="row">
+  <%= form_for :form, url: '/forms' do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :description %>
+  <%= f.text_area :description%><br>
+
+  <%= f.label :question %>
+  <%= f.text_field :questions %><br>
+
+  <%= f.label :options1 %>
+  <%= f.text_field :options %><br>
+
+  <%= f.label :options2 %>
+  <%= f.text_field :options %><br>
+
+  <%= f.label :options3 %>
+  <%= f.text_field :options %><br>
+
+  <%= f.submit "Create my account", class: "btn btn-primary" %>
+
+
+  <% end %>

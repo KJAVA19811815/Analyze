@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
   resources :users
-  resources :surveys
-
+  resources :forms
+  
   root 'homes#index'
 
   get '/login' => 'sessions#new'

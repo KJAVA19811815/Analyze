@@ -19,6 +19,12 @@ ActiveRecord::Schema.define(version: 20170615002900) do
   create_table "answers", force: :cascade do |t|
   end
 
+  create_table "forms", force: :cascade do |t|
+    t.string  "name"
+    t.text    "description"
+    t.integer "{:index=>true, :foreign_key=>true}_id"
+  end
+
   create_table "options", force: :cascade do |t|
     t.string  "options_name"
     t.integer "{:index=>true, :foreign_key=>true}_id"
@@ -26,12 +32,6 @@ ActiveRecord::Schema.define(version: 20170615002900) do
 
   create_table "questions", force: :cascade do |t|
     t.text    "question_name"
-    t.integer "{:index=>true, :foreign_key=>true}_id"
-  end
-
-  create_table "surveys", force: :cascade do |t|
-    t.string  "name"
-    t.text    "description"
     t.integer "{:index=>true, :foreign_key=>true}_id"
   end
 
