@@ -3,25 +3,37 @@
 <div class="row">
   <%= form_for :form, url: '/forms' do |f| %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
+  <div class="fields">
 
-  <%= f.label :description %>
-  <%= f.text_area :description%><br>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
 
-  <%= f.label :question %>
-  <%= f.text_field :questions %><br>
+    <%= f.label :description %>
+    <%= f.text_area :description%><br>
 
-  <%= f.label :options1 %>
-  <%= f.text_field :options %><br>
+    <div id="questions">
+      <%= render 'question' %>
+    </div>
+    <a href="javascript:;" id="addNewQuestion">Add New Question</a>
 
-  <%= f.label :options2 %>
-  <%= f.text_field :options %><br>
+    <div id="poll_choices">
+        <%= render 'poll_choice' %>
+    </div>
+    <a href="javascript:;" id="addNewChoice">Add New Choice</a>
+  </div>
 
-  <%= f.label :options3 %>
-  <%= f.text_field :options %><br>
-
-  <%= f.submit "Create my account", class: "btn btn-primary" %>
+  <%= f.submit "Create the survey", class: "btn btn-primary" %>
 
 
   <% end %>
+
+  <div class="success-message">
+</div>
+
+<div style="display: none;" id="new_question_form">
+    <%= render partial: "question"%>
+</div>
+
+<div style="display: none;" id="new_choice_form">
+    <%= render partial: "poll_choice"%>
+</div>

@@ -11,9 +11,25 @@ def new
 end
 
 def create
-  form = Form.new(form_params)
-  if form.save
-    redirect_to '/forms/:id'
+  form = Form.new(name: params[:name], description: params[:description])
+
+  question = Question.new(question_name: params[:question_name])
+  form.questions << question
+
+  option = Option.new(options_name: params[:options_name])
+  form.options << option
+
+  #@form = Form.create(all the params
+  #@question = @form.question.create(paramas from form)
+  #@quesion.options.create()
+
+
+
+
+
+
+  if form.save && question.save && option.save
+    redirect_to @form
   else
     render :new
   end
@@ -21,9 +37,9 @@ end
 
 private
 
-def form_params
-  params.require(:form).permit(:name, :description, :questions, :options)
-end
+#def form_params
+#  params.require(:form).permit(:name, :description, :questions, :options)
+#end
 
 
 
