@@ -7,39 +7,58 @@ def index
 end
 
 def new
-  form = Form.new
+  @form = Form.new
+  #@question = Question.new
+  #@form.build_question
+  #@form.build_options
+
 end
 
 def create
-  form = Form.new(name: params[:name], description: params[:description])
 
-  question = Question.new(question_name: params[:question_name])
-  form.questions << question
+  #puts params
 
-  option = Option.new(options_name: params[:options_name])
-  form.options << option
+  @form = Form.new(form_params)
+  #@question = Question.new(question_params)
 
-  #@form = Form.create(all the params
-  #@question = @form.question.create(paramas from form)
-  #@quesion.options.create()
+  if @form.save
+
+    @questions = params['questions'].map do |q|
+      #Question.new(form_id: @form.id, question_name: q)
+      #Question.new(form_id: @form.id, question_name: q)
+      ques = Question.new(form_id: @form.id, question_name: q)
+      ques.save
+
+      @choices = params['choices'].map do |choice|
+        Choice.new(question_id: ques.id, choices_name: choice ).save
+      end
 
 
+    end
 
+    #@choices = params['choices'].map do |choice|
+      #Choice.new(question_id: @question.id, choices_name: choice ).save
 
-
-
-  if form.save && question.save && option.save
+  #  end
     redirect_to @form
   else
     render :new
   end
 end
 
+def show
+  @form = Form.find(params[:id])
+end
+
 private
 
-#def form_params
-#  params.require(:form).permit(:name, :description, :questions, :options)
-#end
+def form_params
+  params.require(:form).permit(:name, :description)
+end
+
+def question_params
+  params.require(:question).permit(:question_name)
+end
 
 
 

@@ -17,23 +17,31 @@ ActiveRecord::Schema.define(version: 20170615002900) do
   enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "choice_id"
   end
+
+  add_index "answers", ["choice_id"], name: "index_answers_on_choice_id", using: :btree
+  add_index "answers", ["user_id"], name: "index_answers_on_user_id", using: :btree
+
+  create_table "choices", force: :cascade do |t|
+    t.string  "choices_name"
+    t.integer "question_id"
+  end
+
+  add_index "choices", ["question_id"], name: "index_choices_on_question_id", using: :btree
 
   create_table "forms", force: :cascade do |t|
-    t.string  "name"
-    t.text    "description"
-    t.integer "{:index=>true, :foreign_key=>true}_id"
-  end
-
-  create_table "options", force: :cascade do |t|
-    t.string  "options_name"
-    t.integer "{:index=>true, :foreign_key=>true}_id"
+    t.string "name"
+    t.text   "description"
   end
 
   create_table "questions", force: :cascade do |t|
+    t.integer "form_id"
     t.text    "question_name"
-    t.integer "{:index=>true, :foreign_key=>true}_id"
   end
+
+  add_index "questions", ["form_id"], name: "index_questions_on_form_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -46,7 +54,10 @@ ActiveRecord::Schema.define(version: 20170615002900) do
     t.integer  "income"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "{:index=>true, :foreign_key=>true}_id"
   end
 
+  add_foreign_key "answers", "choices"
+  add_foreign_key "answers", "users"
+  add_foreign_key "choices", "questions"
+  add_foreign_key "questions", "forms"
 end

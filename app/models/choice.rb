@@ -1,4 +1,4 @@
-class Option < ActiveRecord::Base
+class Choice < ActiveRecord::Base
   belongs_to :question
   has_many :answers
 end

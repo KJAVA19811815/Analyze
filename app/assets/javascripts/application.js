@@ -18,17 +18,25 @@ $(document).ready(function() {
   console.log("ready");
   $("#addNewQuestion").on("click", function() {
     console.log("QUESTION LISTEN")
-    $("#questions").append($("#new_question_form").html());
+    var $form = $($("#new_question_form").html());
+    var $pollChoices = $(`<div class="poll-choices"></div>`);
+    var $addNewChoiceButton = $(`<a href="javascript:;" id="addNewChoice">Add New Choice</a>`);
+    $form.append($pollChoices);
+    $form.append($addNewChoiceButton);
+    $addNewChoiceButton.on("click", function() {
+      $pollChoices.append($("#new_choice_form").html());
+    });
+    $("#questions").append($form);
 
     this.removeQuestion = function(element) {}
-    return element.parent().remove();
+    //return element.parent().remove();
   });
-  $("#addNewChoice").on("click", function() {
-    console.log("on listen");
-   $("#poll_choices").append($("#new_choice_form").html());
-
-    this.removeChoice = function(element) {};
-    return element.parent().remove();
-  });
+  // $("#questions").on("click", "#addNewChoice", function() {
+  //   console.log("on listen");
+  //  $("#poll_choices").append($("#new_choice_form").html());
+  //
+  //   this.removeChoice = function(element) {};
+  //   //return element.parent().remove();
+  // });
 
 })

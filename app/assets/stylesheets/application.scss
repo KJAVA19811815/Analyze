@@ -1,0 +1,56 @@
+body {
+  font-family: 'Lato', sans-serif;
+  color: white;
+  background-color: teal;
+}
+
+nav {
+  background-color: black;
+  height: 50px;
+}
+
+ .nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #4CAF50;
+  display: inline-block;
+}
+
+
+img {
+    display: block;
+    margin: auto;
+    width: 80%;
+    height: 20%;
+
+}
+h1 {
+  font-size: 60px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.row {
+  width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  vertical-align: middle;
+}
+
+.row {
+  position: relative;
+  margin: 50px 0;
+}
+
+.fields {
+  background-color: green;
+}
+#desc {
+  margin-top: 10px;
+}
+#name {
+  margin-top: 200px;
+}

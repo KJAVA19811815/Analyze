@@ -1,6 +1,8 @@
 <div class="choiceForm">
      <%= label_tag "Choice" %>
      <br>
-     <%= text_field_tag "choices[]" %> <a href="#" onclick="removeChoice($(this))" class="remove-choice" > X </a>
+     <%= text_field_tag "choices[]" %> <a href="#" onclick="removeChoice($(this))" class="remove-choice" > DELETE </a>
      <br>
+     <div id="poll_choices">
+     </div>
 </div>

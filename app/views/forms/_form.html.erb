@@ -3,24 +3,23 @@
 <div class="row">
   <%= form_for :form, url: '/forms' do |f| %>
 
-  <div class="fields">
+    <div id="name">
 
     <%= f.label :name %>
     <%= f.text_field :name %><br>
+  </div>
+  <div id="desc">
 
     <%= f.label :description %>
     <%= f.text_area :description%><br>
+  </div>
 
     <div id="questions">
-      <%= render 'question' %>
-    </div>
-    <a href="javascript:;" id="addNewQuestion">Add New Question</a>
+      <a href="javascript:;" id="addNewQuestion">Add New Question</a>
+      <div id="poll_choices">
+      </div>
 
-    <div id="poll_choices">
-        <%= render 'poll_choice' %>
     </div>
-    <a href="javascript:;" id="addNewChoice">Add New Choice</a>
-  </div>
 
   <%= f.submit "Create the survey", class: "btn btn-primary" %>
 
