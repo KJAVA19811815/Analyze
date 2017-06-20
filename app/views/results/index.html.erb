@@ -3,10 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>DATA</title>
-    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <%= javascript_include_tag('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js') %>
+    <%= javascript_include_tag ('graph.js') %>
+
+
   </head>
   <body>
-    <h1>Here are the results</h1>
+    <canvas id="myChart" width="200" height="200"></canvas>
+     <h1>Here are the results</h1>
+
 
 
   </body>

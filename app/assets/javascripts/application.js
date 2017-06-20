@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require d3
+//= require Chart.min
 $(document).ready(function() {
   console.log("ready");
   $("#addNewQuestion").on("click", function() {
@@ -32,12 +32,5 @@ $(document).ready(function() {
     this.removeQuestion = function(element) {}
     //return element.parent().remove();
   });
-  // $("#questions").on("click", "#addNewChoice", function() {
-  //   console.log("on listen");
-  //  $("#poll_choices").append($("#new_choice_form").html());
-  //
-  //   this.removeChoice = function(element) {};
-  //   //return element.parent().remove();
-  // });
 
 })
