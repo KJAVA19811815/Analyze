@@ -1,8 +1,10 @@
 <% provide(:title, 'Sign up') %>
 <h1>Sign up</h1>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
 
   <div class="row">
-    <%= form_for(@user, :html => { :style => 'background-color:black;'}) do |f| %>
+    <%= form_for(@user, :html => {}) do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name %><br>
 

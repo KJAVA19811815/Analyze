@@ -2,18 +2,24 @@
 <html>
 <head>
   <title>NewSurveyData</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <nav>
-    <ul>
-      <li class="nav"><a href="#">Home</a></li>
-      <li class="nav"><a href="/users/new">Register</a></li>
-      <li class="nav"><a href="/login">Login</a></li>
-      <li class="nav"><a href="/forms">CREATE-SURVEY-FORMS</a></li>
-    </ul>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">SURVEY-DATA-PROFILING</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li class="nav"><a href="#">Home</a></li>
+        <li class="nav"><a href="/users/new">Register</a></li>
+        <li class="nav"><a href="/login">Login</a></li>
+        <li class="nav"><a href="/forms">CREATE-SURVEY-FORMS</a></li>
+
+      </ul>
+    </div>
   </nav>
 <img src="https://d2v4zi8pl64nxt.cloudfront.net/developing-innovative-content-what-you-need-to-know-pt1/5458fc7da68163.74888691.gif">
 

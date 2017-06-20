@@ -1,1 +1,15 @@
 <h1>Answer the survey!</h1>
+
+<%= form_for(@answer, url: form_answers_path(form_id: @form.id))  do |f| %>
+
+<p><%= @question.question_name %></p>
+
+<% @question.choices.each do |c| %>
+  <%= radio_button_tag(:answer_name, c.choices_name) %>
+  <%= label_tag(:answer_name, c.choices_name) %><br>
+
+
+
+<% end %>
+<%= f.submit "Answer", class: "btn btn-primary" %>
+<% end %>
