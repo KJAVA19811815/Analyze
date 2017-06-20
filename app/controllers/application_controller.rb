@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
     redirect_to '/login' unless current_user
   end
 
+  #def admin_user
+  #  @current_user.data_type = Admin
+  #end
+
 end

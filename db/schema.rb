@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20170615002900) do
   add_index "questions", ["form_id"], name: "index_questions_on_form_id", using: :btree
 
   create_table "users", force: :cascade do |t|
+    t.string   "user_type"
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
