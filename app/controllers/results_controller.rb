@@ -1,34 +1,53 @@
 class ResultsController < ApplicationController
 
   def index
-    #@result = Results.new
-     #binding.pry
-    #@user = User.joins(:answers, answers:[{choice: :question}, :choice])
-    #@form = @use.joins(:form)
-    #puts @user, 'USER JOIN'
-    #puts @form
-    #@user = User.find(2).answers
-    #@user2 = User.find(3).answers
+    @user = User.joins(:answers, answers:[{choice: :question}, :choice])
+    puts @user.inspect, 'USER JOIN'
     #@test = [1,2,3,4,5,6]
-
-
-
-    #@question = Question.all
   end
 
   def example
-    @male_count = User.where(sex: 'male').count
-    @female_count = User.where(sex: 'female').count
-    @question = Question.all
-    result = {
-      male: @male_count,
-      female: @female_count,
-      all: User.count,
-      question: @question,
-      choice: Choice.all,
-      answer: Answer.all,
-      form: Form.all
+    @user = User.find_by(sex: 'female')
+    #@answer = @user.answers.map { |e| e.choice  }
+    #@question = @answer.map { |e| e.question  }
+    #@form = @question.map { |e| e.form  }
 
+    #@users = User.all
+    #@answer = @users.map { |e| e.answers  }
+    #@choice = @answer.map {  |e| e.choices  }
+    # @new_items = []
+    # items = [1,2,3,4]
+    # items.map do |item|
+    #   @new_item << { original: item, double: (2 * item) }
+    # end
+    @arr = []
+    @users = User.where(sex: 'male').find_each do |u|
+       @answers = u.answers
+       @choices = @answers.map { |e| e.choice }
+       @questions = @choices.map { |e| e.question }
+       @forms = @questions.map { |e| e.form }
+
+       @users.map do |item|
+         @arr << {item: item}
+       end
+
+       #binding.pry
+
+
+    end
+
+    result = {
+      users: @users,
+      #answer: @answer,
+      #choice: @choice
+      user: @user,
+      answers: @answers,
+      choices: @choices,
+      questions: @questions,
+      forms: @forms
+      #answer: @answer,
+      #question: @question,
+      #form: @form
     }
     render json: result
   end
