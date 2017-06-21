@@ -1,22 +1,13 @@
-//var ctx = $("#myChart");
-
-//= require Chart.min
-//
-// var myBarChart = new Chart(ctx, {
-//   type: 'bar',
-//   data: data,
-//   options: options
-// });
 $(document).ready(function() {
-  var ctx = $("#myChart");
+  var ctx2 = $("#myChart2");
   var myChart = new Chart(ctx, {
     //console.log(myChart);
       type: 'bar',
       data: {
-          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+          labels: [],
           datasets: [{
-              label: '# of Votes',
-              data: [12, 19, 3, 5, 2, 3],
+              label: '',
+              data:  [],
               backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',
                   'rgba(54, 162, 235, 0.2)',
@@ -45,7 +36,4 @@ $(document).ready(function() {
               }]
           }
       }
-  });
-
-
 })

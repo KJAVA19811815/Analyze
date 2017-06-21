@@ -18,7 +18,7 @@
 $(document).ready(function() {
   console.log("ready");
   $("#addNewQuestion").on("click", function() {
-    console.log("QUESTION LISTEN")
+    //console.log("QUESTION LISTEN"
     var $form = $($("#new_question_form").html());
     var $pollChoices = $(`<div class="poll-choices"></div>`);
     var $addNewChoiceButton = $(`<a href="javascript:;" id="addNewChoice">Add New Choice</a>`);

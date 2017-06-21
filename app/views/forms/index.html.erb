@@ -1,5 +1,4 @@
 
-
 <h1>SURVEY</h1>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -12,4 +11,6 @@
   </div>
 </nav>
 
-<h1><%= @form.name %></h1>
+<% @form.each do |g| %>
+<p><%= g.name %></p>
+<% end %>

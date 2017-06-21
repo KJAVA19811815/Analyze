@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   root 'homes#index'
 
+  get '/example' => 'results#example'
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
