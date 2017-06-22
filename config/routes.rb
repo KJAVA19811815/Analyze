@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   get '/answers' => 'answers#index'
   get '/form/:id/answers/new' => 'answers#new'
 
+  get '/male' => 'results#male'
+
+
   get 'graph/index'
   get 'graph/data', :defaults => {:format => 'json' }
   # The priority is based upon order of creation: first created -> highest priority.

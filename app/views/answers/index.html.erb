@@ -1,6 +1,5 @@
 <h1>Answer the surveys here</h1><br>
 
 <% @forms.each do |f| %>
-<p><a href="forms/<%= f.id %>/answers/new">CLICK HERE</a></p>
-<%= link_to f.name, new_form_answer_path(form_id: f.id) %>
+<%= link_to f.name, new_form_answer_path(form_id: f.id) %><br>
 <% end %>
