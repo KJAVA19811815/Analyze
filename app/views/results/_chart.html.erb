@@ -2,13 +2,14 @@
 
 <script>
 $(document).ready(function() {
-  var ctx3 = $("#myChart3");
-  //console.log(ctx2)
+  var ctx3 = $(".myChart3");
+
+  // $("#container").append($("ctx3"))
+
   var myChart = new Chart(ctx3, {
-    //console.log(myChart);
       type: 'bar',
       data: {
-          labels: <%= results.keys.to_json.html_safe %>
+          labels: <%= results.keys.to_json.html_safe %>,
           datasets: [{
               label: "<%= question %>",
               data:   <%= results.values.to_json.html_safe %>,
