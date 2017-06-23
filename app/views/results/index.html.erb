@@ -11,26 +11,20 @@
   <body>
 
     <%= form_tag('/results', :method => "get", id: "search-form") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "" %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
       <%= submit_tag "Search", :name => nil %>
     <% end %>
 
   <script>
 
-  var onSubmit = answers.filter(function(answer) {
-
-  })
-
   </script>
-    <p><a href="/adams_apple">Hello</p>
+    <p><a href="/adams_apple">Hello</a></p>
       <canvas id="myChart3">
+          <%= render 'chart' %>
       </canvas>
 
 
 
 
   </body>
-  <!-- <script>
-    console.log(typeof "<%= @test %>".split(', '))
-  </script> -->
 </html>

@@ -3,18 +3,25 @@ class ResultsController < ApplicationController
   def index
     search = params[:search]
     if search
-      @all = Choice.joins(:question, answers: [:user]).
-      select( "questions.question_name", "answers.id", "choices_name", "users.name", "users.sex", "users.age").
-      where(users: {sex: search}).
-      group(:choices_name)
+      results = Question.joins(choices: {answers: [:user]}).
+      select("questions.id as question_id","question_name", "answers.id as answer_id", "choices.id as choice_id", "choices_name", "users.name", "users.sex", "users.age").
+      where(users: {sex: search})
+      @all = {}
+      results.group_by(&:question_id).each do |question_id, results|
+        question = {}
+        results.group_by(&:choice_id).each do |choice_id, results|
+          question[results.first.choices_name] = results.length
+        end
+        @all[results.first.question_name] = question
+      end
       #@all = User.joins(:answers, answers:[{choice: :question}, :choice]).
       #select("users.name, users.sex, choices.choices_name, questions.question_name, count(*) as count").
       #where(users: {sex: search}).
       #group(:choices_name)
 
     else
-      @all = Choice.joins(:question, answers: [:user]).
-      select( "questions.question_name", "answers.id", "choices_name", "users.name", "users.sex", "users.age")
+      @all = [] #Choice.joins(:question, answers: [:user]).
+      # select( "questions.question_name", "answers.id", "choices_name", "users.name", "users.sex", "users.age")
     end
     #@user = User.joins(:answers, answers:[{choice: :question}, :choice]).select("users.name, users.sex, choices.choice_name")
     #@all = User.joins(:answers, answers:[{choice: :question}, :choice]).select("users.name, users.sex, choices.choices_name, questions.question_name").where(users: {"sex": 'male'})
@@ -59,7 +66,7 @@ class ResultsController < ApplicationController
        #@choices5 = Choice.joins(answers: [:user]).where(users: {sex: 'female'}, choices_name: 'Yellow').length
        #@answers = Answer.includes(:choice).joins(:user) #where(users: {sex: 'male'})
        @all = Choice.joins(:question, answers: [:user]).
-       select( "questions.question_name", "answers.id", "choices_name", "users.name", "users.sex", "users.age")
+       select( "questions.question_name", "questions.id as question_id", "answers.id as answer_id", "choices_name", "users.name", "users.sex", "users.age")
        #group(choices.id)
        #group(:choices_name)
 

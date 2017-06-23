@@ -8,10 +8,10 @@ $(document).ready(function() {
     //console.log(myChart);
       type: 'bar',
       data: {
-          labels: <%= @all.keys.to_json %>
+          labels: <%= results.keys.to_json.html_safe %>
           datasets: [{
-              label: 'this is the question',
-              data:   <%= @all.values.to_json %>,
+              label: "<%= question %>",
+              data:   <%= results.values.to_json.html_safe %>,
               backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',
                   'rgba(54, 162, 235, 0.2)',
