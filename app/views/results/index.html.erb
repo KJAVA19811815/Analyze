@@ -9,49 +9,22 @@
   </head>
 
   <body>
+
+    <%= form_tag('/results', :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "" %>
+      <%= submit_tag "Search", :name => nil %>
+    <% end %>
+
   <script>
-  $(document).ready(function() {
-    var ctx2 = $("#myChart2");
-    console.log(ctx2)
-    var myChart = new Chart(ctx2, {
-      //console.log(myChart);
-        type: 'bar',
-        data: {
-            labels: ["Red", "Blue", "Green", "Yellow"],
-            datasets: [{
-                label: 'what is ur fav colour?',
-                data:  ["<%= @choices2 %>", "<%= @choices3 %>", "<%= @choices4 %>", "<%= @choices5 %>"],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            }
-        }
+
+  var onSubmit = answers.filter(function(answer) {
+
   })
-})
 
   </script>
-    <canvas id="myChart2">
-    </canvas
-    <p><a href="/male">Hello</p>
+    <p><a href="/adams_apple">Hello</p>
+      <canvas id="myChart3">
+      </canvas>
 
 
 

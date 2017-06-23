@@ -2,22 +2,22 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>MEN STUFF</title>
-      <%= javascript_include_tag('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js') %>
+    <title>New statistics</title>
   </head>
   <body>
-    <script>
+
+  <script>
     $(document).ready(function() {
-      var ctx3 = $("#myChart3");
-      //console.log(ctx2)
-      var myChart = new Chart(ctx3, {
+      var ctx2 = $("#myChart2");
+      console.log(ctx2)
+      var myChart = new Chart(ctx2, {
         //console.log(myChart);
           type: 'bar',
           data: {
-              labels: <%= @choices.keys.to_json.html_safe %>,
+              labels: ["Red", "Blue", "Green", "Yellow"],
               datasets: [{
-                  label: 'do u like apple',
-                  data:  <%= @choices.values.to_json.html_safe %>,
+                  label: 'what is ur fav colour?',
+                  data:  [],
                   backgroundColor: [
                       'rgba(255, 99, 132, 0.2)',
                       'rgba(54, 162, 235, 0.2)',
@@ -46,9 +46,6 @@
   })
 
     </script>
-      <canvas id="myChart3">
-      </canvas>
-
 
   </body>
 </html>

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :answers
   end
 
+#resouces :question
   resources :results, only: [:index]
 
   root 'homes#index'
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
   get '/answers' => 'answers#index'
   get '/form/:id/answers/new' => 'answers#new'
 
-  get '/male' => 'results#male'
+  get '/adams_apple' => 'results#male'
 
 
   get 'graph/index'
