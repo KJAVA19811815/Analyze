@@ -12,7 +12,6 @@ end
 
 def create
   @form = Form.new(form_params)
-
   if @form.save
     params['questions'].each do |q|
       question = Question.create(form_id: @form.id, question_name: q)
@@ -30,6 +29,13 @@ end
 
 def show
   @form = Form.find(params[:id])
+end
+
+def destroy
+  @form = Form.find(params[:id])
+  @form.destroy
+  flash[:success] = "form deleted"
+  redirect_to "/forms"
 end
 
 private

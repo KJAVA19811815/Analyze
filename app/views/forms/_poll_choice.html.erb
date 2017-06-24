@@ -1,6 +1,7 @@
 <div class="choiceForm">
      <%= label_tag "Choice" %>
      <br>
+     <input type="hidden" name="virtualID" value=virtualID>
      <%= text_field_tag "choices[]" %> <a href="#" onclick="removeChoice($(this))" class="remove-choice" > DELETE </a>
      <br>
      <div id="poll_choices">

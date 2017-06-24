@@ -4,8 +4,8 @@
     <title>TestLayout</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
@@ -17,5 +17,13 @@
     <% end %>
 
     <%= yield %>
+    <!-- <footer class="page-footer">
+    <div class="footer-copyright">
+    <div class="container">
+            © 2014 Copyright Text
+      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+    </div>
+  </footer> -->
   </body>
 </html>

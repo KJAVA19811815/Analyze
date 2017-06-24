@@ -3,17 +3,32 @@
   <head>
     <meta charset="utf-8">
     <title>DATA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
     <%= javascript_include_tag('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js') %>
+
     <!-- <%= javascript_include_tag ('graph.js') %> -->
     <!-- <%= javascript_include_tag ('chart.js') %> -->
   </head>
 
   <body>
+    <div class="row">
+      <div class="input-field col s12">
+          <div class="wrapper">
+            <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Search to analyze data</span>
 
-    <%= form_tag('/results', :method => "get", id: "search-form") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
-      <%= submit_tag "Search", :name => nil %>
-    <% end %>
+            <%= form_tag('/results', :method => "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+            <%= submit_tag "Search", :name => nil, class: "waves-effect waves-light btn" %>
+
+              <% end %>
+            </span>
+          </div>
+        </div>
+            </div>
+            </div>
+  </div>
 
   <script>
 
@@ -22,9 +37,7 @@
 
 
     <div id = "container">
-      <canvas class="myChart3">
           <%= render 'chart' %>
-      </canvas>
     </div>
 
 

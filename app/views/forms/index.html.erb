@@ -12,5 +12,8 @@
 </nav>
 
 <% @form.each do |g| %>
-<p><%= g.name %></p>
+<p><%= g.name %></p><br>
+<p><%= link_to 'Delete Form', method: :delete%></p>
+
+
 <% end %>

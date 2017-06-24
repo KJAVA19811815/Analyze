@@ -4,6 +4,9 @@
 <%provide(:title, 'Create a form-survey')%>
 
 <div class="row">
+  <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+
+  <div class="wrap">
   <%= form_for :form, url: '/forms' do |f| %>
 
     <div id="name">
@@ -21,6 +24,7 @@
       <a href="javascript:;" id="addNewQuestion">Add New Question</a>
       <div id="poll_choices">
       </div>
+    </div>
 
     </div>
 

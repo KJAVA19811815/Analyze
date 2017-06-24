@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 //= require Chart.min
 $(document).ready(function() {
@@ -21,6 +20,7 @@ $(document).ready(function() {
     var $form = $($("#new_question_form").html());
     var $pollChoices = $(`<div class="poll-choices"></div>`);
     var $addNewChoiceButton = $(`<a href="javascript:;" id="addNewChoice">Add New Choice</a>`);
+    //var $remove-choice
     $form.append($pollChoices);
     $form.append($addNewChoiceButton);
     $addNewChoiceButton.on("click", function() {
