@@ -1,0 +1,31 @@
+<% @all.each do |question, results| %>
+<canvas class="<%= question.split(' ')[0] %>">
+<div class="col l6 m6 s6">
+  <script>
+  $(document).ready(function() {
+    var ctx4 = $(".<%=question.split(' ')[0] %>");
+
+    var myChart = new Chart(ctx4, {
+        type: 'pie',
+        data: {
+          labels: <%= results.keys.to_json.html_safe %>,
+          datasets: [{
+            label: "<%= question %>",
+            backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+            data: <%= results.values.to_json.html_safe %>,
+          }]
+        },
+    options: {
+      title: {
+        display: true,
+        text:"this is a pie chart"
+      }
+    }
+  })
+})
+
+  </script>
+
+</div>
+</canvas>
+<% end %>

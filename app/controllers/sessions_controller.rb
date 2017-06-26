@@ -23,4 +23,14 @@ class SessionsController < ApplicationController
 
   end
 
+  # def admin
+  #   user = User.find_by_admin(params[:user_type])
+  #   if user && user.authenticate(params[:password])
+  #     session[:user_id] = user.id
+  #     redirect_to '/answers'
+  #   else
+  #
+  #     redirect_to '/login'
+  #   end
+
 end

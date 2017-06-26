@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   root 'homes#index'
 
   get '/example' => 'results#example'
+  # get '/admin', to: redirect('/login')
+  get '/surveys/voice' => 'surveys#voice'
+  get '/surveys/sms' => 'surveys#sms'
+
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
