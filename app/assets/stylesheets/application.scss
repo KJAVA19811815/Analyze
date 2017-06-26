@@ -4,12 +4,24 @@ body {
   background-color: black;
 }
 
+.rows {
+  padding-left: 400px;
+  padding-right: 400px;
+  padding-top: 180px;
+
+
+}
+
 img {
     display: block;
     margin: auto;
     width: 80%;
     height: 20%;
 
+}
+
+#body {
+  background-image: url("https://www.gmass.co/blog/wp-content/uploads/2017/04/Google-Forms-Link-Edited.gif");
 }
 h1 {
   font-size: 60px;

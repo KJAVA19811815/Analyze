@@ -8,30 +8,47 @@
       <div class="row">
         <div class="input-field col s6">
     <%= form_for(@user, :html => {}) do |f| %>
+      <div class="input-field col s6">
       <%= f.label :name %>
       <%= f.text_field :name %><br>
-
+      </div>
+        <div class="input-field col s6">
       <%= f.label :email %>
       <%= f.email_field :email %><br>
+    </div>
 
+      <div class="input-field col s6">
       <%= f.label :age %>
       <%= f.number_field :age%><br>
+    </div>
 
+        <div class="input-field col s6">
       <%= f.label :sex %>
       <%= f.text_field :sex %><br>
+      <div>
 
+      <div class="input-field col s6">
       <%= f.label :religion %>
       <%= f.text_field :religion %><br>
+    </div>
 
+      <div class="input-field col s6">
       <%= f.label :ethnicity %>
       <%= f.text_field :ethnicity %><br>
+      </div>
 
+      <div class="input-field col s6">
       <%= f.label :income %>
       <%= f.number_field :income%><br>
+      </div>
 
+      <div class="input-field col s6">
       <%= f.label :password %>
       <%= f.password_field :password %><br>
+    </div>
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
+    </div>
+  </form>
   </div>
