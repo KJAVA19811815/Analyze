@@ -4,8 +4,12 @@ class ResultsController < ApplicationController
     search = params[:search]
     if search
       results = Question.joins(choices: {answers: [:user]}).
-      select("questions.id as question_id","question_name", "answers.id as answer_id", "choices.id as choice_id", "choices_name", "users.name", "users.sex", "users.age").
-      where("users.sex = ? OR users.age = ?", search, search.to_i)
+      select("questions.id as question_id","question_name", "answers.id as answer_id", "choices.id as choice_id", "choices_name", "users.name", "users.sex", "users.age")
+      if Question::AGE_FILTERS.include? Question.const_get(search.upcase)
+        results = results.where("users.age IN (?)", Question.const_get(search.upcase))
+      elsif Question::GENDER_FILTERS.include? Question.const_get(search.upcase)
+        results = results.where("users.sex = ?", Question.const_get(search.upcase))
+      end
       @all = {}
       results.group_by(&:question_id).each do |question_id, results|
         question = {}
@@ -16,7 +20,7 @@ class ResultsController < ApplicationController
       end
 
     else
-      @all = []
+      @all = {}
     end
   end
 
@@ -44,8 +48,4 @@ class ResultsController < ApplicationController
     }
     render json: result
   end
-
-  #def query
-  #  @q = "%#{params[:query]}%"
-  #end
 end
