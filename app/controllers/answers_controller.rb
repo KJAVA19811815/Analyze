@@ -25,6 +25,7 @@ class AnswersController < ApplicationController
   end
 
   def show
+    @forms = Form.all
   end
 
   def update

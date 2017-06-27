@@ -24,21 +24,6 @@ class ResultsController < ApplicationController
     end
   end
 
-  def new
-
-  end
-
-  def male
-    @choices = Choice.
-      joins(answers: [:user]).
-      where(
-        users: {sex: 'male'},
-        choices: {question_id: params[:question_id].to_i}
-      ).
-      group(:choices_name).
-      count
-  end
-
   def example
     @all = Choice.joins(:question, answers: [:user]).
     select( "questions.question_name", "questions.id as question_id", "answers.id as answer_id", "choices_name", "users.name", "users.sex", "users.age")

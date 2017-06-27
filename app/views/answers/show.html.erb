@@ -1,1 +1,23 @@
-<h1>Thanks for answering</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2>thanks for answering now</h2>
+    <div class="rowed">
+      <div class="col s12 m6">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+
+    <% @forms.each do |f| %>
+    <h2><%= link_to f.name, new_form_answer_path(form_id: f.id) %></h2><br>
+    <% end %>
+    </div>
+    </div>
+  </div>
+</div>
+
+  </body>
+</html>

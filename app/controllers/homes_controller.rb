@@ -1,8 +1,7 @@
 class HomesController < ApplicationController
 
   def index
-    # @user = User.find_by(params[:user_type])
-    #puts @user
+     @user = User.find_by(params[:name])
 
   end
 end

@@ -13,7 +13,7 @@
 
 <% @form.each do |g| %>
 <p><%= g.name %></p><br>
-<p><%= link_to 'Delete Form', method: :delete%></p>
+<p><%= link_to 'Delete', form_path(g.id), method: :delete %></p>
 
 
 <% end %>
