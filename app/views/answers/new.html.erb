@@ -1,15 +1,36 @@
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"> -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
 
-<%= form_for(@answer, url: form_answers_path(form_id: @form.id))  do |f| %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
 
-<h1 style="color: black;"><%= @question.question_name %></h1>
+    <title></title>
+  </head>
+  <body>
+    
+    <%= form_for(@answer, url: form_answers_path(form_id: @form.id))  do |f| %>
 
-<% @question.choices.each do |c| %>
-  <%= radio_button_tag(:answer_name, c.choices_name) %>
-  <%= label_tag(:answer_name, c.choices_name) %><br>
+    <div class="answer">
+
+    <h1 style="color: black;"><%= @question.question_name %></h1>
+
+    <% @question.choices.each do |c| %>
+    <p>
+      <%= radio_button_tag(:answer_name, c.choices_name) %>
+      <%= label_tag("answer_name_#{c.choices_name}", c.choices_name) %><br>
+    </p>
 
 
 
-<% end %>
-<%= f.submit "Answer", class: "btn btn-primary" %>
-<% end %>
+
+
+    <% end %>
+    <%= f.submit "Answer", class: "btn btn-primary" %>
+    <% end %>
+    </div>
+
+
+  </body>
+</html>
