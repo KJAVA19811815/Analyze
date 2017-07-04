@@ -22,8 +22,8 @@ jquery-rails -
 
 ## Screenshots
 
-!["Screenshot of home page"](https://github.com/KJAVA19811815/analyze/docs/home.png)
-!["Screenshot of login page"](https://github.com/KJAVA19811815/analyze/docs/login.png)
-!["Screenshot of survey creation page"](https://github.com/KJAVA19811815/analyze/docs/survey.png)
-!["Screenshot of answer"](https://github.com/KJAVA19811815/analyze/docs/answer.png)
-!["Screenshot of searchbar page"](https://github.com/KJAVA19811815/analyze/docs/search.png)
+!["Screenshot of home page"](https://github.com/KJAVA19811815/analyze/blob/master/docs/home.png)
+!["Screenshot of login page"](https://github.com/KJAVA19811815/analyze/blob/master/docs/login.png)
+!["Screenshot of survey creation page"](https://github.com/KJAVA19811815/analyze/blob/master/docs/survey.png)
+!["Screenshot of answer"](https://github.com/KJAVA19811815/analyze/blob/master/docs/answer.png)
+!["Screenshot of searchbar page"](https://github.com/KJAVA19811815/analyze/blob/master/docs/search.png)
