@@ -3,9 +3,9 @@ class Question < ActiveRecord::Base
   belongs_to :form
   has_many :answers, through: :choices
 
-  YOUNG = (18..22)
-  MIDDLE = (23..25)
-  OLD = (26..30)
+  YOUNG = (18..23)
+  MIDDLE = (24..26)
+  OLD = (27..30)
   AGE_FILTERS = [YOUNG, MIDDLE, OLD]
 
   MALE = 'male'

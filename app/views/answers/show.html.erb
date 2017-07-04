@@ -7,6 +7,22 @@
     <title></title>
   </head>
   <body>
+    <nav>
+      <div class="nav-wrapper">
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li class="nav"><a href="/">Home</a></li>
+          <% if current_user %>
+            <li> Signed in as <%= current_user.name %> </li>
+              <li> <%= link_to "Logout", '/logout' %></li>
+          <% else %>
+          <li>  <%= link_to 'Login', '/login' %> </li>
+             <li> <%= link_to 'Signup', '/users/new' %></li>
+          <% end %>
+
+
+        </ul>
+      </div>
+    </nav>
     <h2 style="color: blue;">thanks for answering</h2>
     <div class="rowed">
     <% @forms.each do |f| %>

@@ -11,13 +11,18 @@
 <body id="body">
   <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">SURVEY-DATA-PROFILING</a>
+      <a href="#" class="brand-logo">ANALYZE</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li class="nav"><a href="#">Home</a></li>
-        <li class="nav"><a href="/users/new">Register</a></li>
-        <li class="nav"><a href="/login">Login</a></li>
         <li class="nav"><a href="/forms/new">CREATE-SURVEY-FORMS</a></li>
         <li class="nav"><a href="/results">DATA-COMPARISON</a></li>
+        <% if current_user %>
+          <li> Signed in as <%= current_user.name %></li>
+            <li> <%= link_to "Logout", '/logout' %></li>
+        <% else %>
+        <li>  <%= link_to 'Login', '/login' %> </li>
+           <li> <%= link_to 'Signup', '/users/new' %></li>
+        <% end %>
+
 
       </ul>
     </div>

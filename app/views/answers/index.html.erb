@@ -9,14 +9,21 @@
   </head>
   <body>
     <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">SURVEY-DATA-PROFILING</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <div class="nav-wrapper">
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li class="nav"><a href="/">Home</a></li>
+          <% if current_user %>
+            <li> Signed in as <%= current_user.name %></li>
+              <li><%= link_to "Logout", '/logout' %></li>
+          <% else %>
+          <li>  <%= link_to 'Login', '/login' %> </li>
+             <li> <%= link_to 'Signup', '/users/new' %></li>
+          <% end %>
 
 
-      </ul>
-    </div>
-  </nav>
+        </ul>
+      </div>
+    </nav>
     <h1 style="color: black;">Answer the surveys here</h1><br>
 
 
@@ -33,7 +40,7 @@
     </div>
   </div>
 </div>
-  
+
 
   </body>
 </html>

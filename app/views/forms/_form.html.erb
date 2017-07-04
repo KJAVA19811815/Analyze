@@ -9,19 +9,19 @@
   <div class="wrap">
   <%= form_for :form, url: '/forms' do |f| %>
 
-    <div id="name" style="color: black;">
+    <div id="name" style="color: white;">
 
-    <%= f.label :name %>
+    <%= f.label :name, style: 'color: white; font-size: 160%;' %>
     <%= f.text_field :name %><br>
   </div>
-  <div id="desc" style="color: black;">
+  <div id="desc" style="color: white;">
 
-    <%= f.label :description %>
+    <%= f.label :description, style: 'color: white; font-size: 160%;' %>
     <%= f.text_area :description%><br>
   </div>
 
-    <div id="questions">
-      <a href="javascript:;" id="addNewQuestion">Add New Question</a>
+    <div id="questions", style="color: white; font-size: 130%;">
+      <a href="javascript:;" id="addNewQuestion"><strong>Add New Question</strong></a>
       <div id="poll_choices">
       </div>
     </div>

@@ -5,6 +5,22 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+a.brand-logo {
+  padding-left: 40px;
+}
+
+nav {
+  border-radius: 10px;
+}
+
+.brand-logo {
+  padding-left: 50px;
+}
+
+#addNewQuestion {
+  color: white;
+}
+
 .answer{
   display: block;
   position: relative;
