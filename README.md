@@ -5,14 +5,17 @@
    user to answer the surveys after logging in.
 3. You can later see how different users answered questions by their profile, in this project you can check by gender and age group
 4. Search by 'male', 'female', 'young', 'middle', 'old' since I am using constants.
-5. Register broke i am working on it login using s@s, shawna or c@c, carlos.
 
 ## Getting Started
 
 1. Fork this repository, then clone your fork of this repository.
 2. Install dependencies using the `bundle install` command.
 3. Start the web server using the `rails s or bin/rails s -b 0.0.0.0(if in vagrant) ` command. The app will be served at <http://localhost:3000/>.
-4. Go to <http://localhost:8080/> in your browser.
+
+## Under-Repair
+
+1. Working on to fix the user registeration process
+2. Search by other attributes.
 
 ## Dependencies(other than default)
 
