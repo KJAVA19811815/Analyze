@@ -1,7 +1,5 @@
 class FormsController < ApplicationController
 
-#http_basic_authenticate_with name: ENV["HTTP_AUTH_NAME"], password: ENV["HTTP_AUTH_PASS"]
-
 def index
   @form = Form.all
 end
@@ -11,12 +9,11 @@ def new
 end
 
 def create
+  #CREATION OF THE FROM DATA IS STORED IN 3 SEPERATE TABLES - QUESTIONS - ANSWERS - FORMS
   @form = Form.new(form_params)
   if @form.save
     params['questions'].each do |q|
       question = Question.create(form_id: @form.id, question_name: q)
-      puts 'HELLO THIS IS IT'
-      puts params['choices']
       params['choices'].each do |choice|
         Choice.create(question_id: question.id, choices_name: choice )
       end
@@ -29,13 +26,6 @@ end
 
 def show
   @form = Form.find(params[:id])
-end
-
-def destroy
-  @form = Form.find(params[:id])
-  @form.destroy
-  flash[:success] = "form deleted"
-  redirect_to "/forms"
 end
 
 private

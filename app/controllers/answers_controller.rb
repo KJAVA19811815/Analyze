@@ -1,6 +1,5 @@
 class AnswersController < ApplicationController
   def new
-    #@answer = Answer.new()
     @form = Form.find(params[:form_id])
     @question = @form.questions.first
     @choice = @question.choices
@@ -12,6 +11,7 @@ class AnswersController < ApplicationController
   end
 
   def create
+    #answering the question and storing the corresponding user_id and choice_id in answers table
     @answer = Answer.new
     @answer.user_id = current_user.id
     choice = Choice.find_by(choices_name: params[:answer_name])

@@ -14,9 +14,11 @@
 //= require jquery_ujs
 //= require_tree .
 //= require Chart.min
+
 $(document).ready(function() {
   console.log("ready");
   $("#addNewQuestion").on("click", function() {
+    // USING JQUERY TO DYNAMICALLY CREATE HTML FORM ELEMENTS
     var $form = $($("#new_question_form").html());
     var $pollChoices = $(`<div class="poll-choices"></div>`);
     var $addNewChoiceButton = $(`<a href="javascript:;" id="addNewChoice">Add New Choice</a>`);
